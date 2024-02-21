@@ -1,16 +1,16 @@
 <p align="center">
-  <img src="https://i.imgur.com/LtUGnF3.png" width=500 />
+  <img src="./docs/images/banner.png" width=500  alt="project logo"/>
 </p>
 
 <div align="center">
   <a href="https://github.com/sundowndev/phoneinfoga/actions">
     <img src="https://github.com/sundowndev/phoneinfoga/workflows/Build/badge.svg" alt="build status" />
   </a>
-  <a href="https://goreportcard.com/report/github.com/sundowndev/phoneinfoga">
-    <img src="https://goreportcard.com/badge/github.com/sundowndev/phoneinfoga" alt="go report" />
+  <a href="https://goreportcard.com/report/github.com/sundowndev/phoneinfoga/v2">
+    <img src="https://goreportcard.com/badge/github.com/sundowndev/phoneinfoga/v2" alt="go report" />
   </a>
   <a href="https://codeclimate.com/github/sundowndev/phoneinfoga/maintainability">
-    <img src="https://api.codeclimate.com/v1/badges/3259feb1c68df1cd4f71/maintainability" />
+    <img src="https://api.codeclimate.com/v1/badges/3259feb1c68df1cd4f71/maintainability"  alt="code climate badge"/>
   </a>
   <a href='https://coveralls.io/github/sundowndev/phoneinfoga'>
     <img src='https://coveralls.io/repos/github/sundowndev/phoneinfoga/badge.svg' alt='Coverage Status' />
@@ -18,42 +18,39 @@
   <a href="https://github.com/sundowndev/phoneinfoga/releases">
     <img src="https://img.shields.io/github/release/SundownDEV/phoneinfoga.svg" alt="Latest version" />
   </a>
+  <a href="https://hub.docker.com/r/sundowndev/phoneinfoga">
+    <img src="https://img.shields.io/docker/pulls/sundowndev/phoneinfoga.svg" alt="Docker pulls" />
+  </a>
 </div>
 
-<h4 align="center">Advanced information gathering & OSINT framework for phone numbers</h4>
+<h4 align="center">Information gathering framework for phone numbers</h4>
 
 <p align="center">
   <a href="https://sundowndev.github.io/phoneinfoga/">Documentation</a> •
-  <a href="https://petstore.swagger.io/?url=https://raw.githubusercontent.com/sundowndev/phoneinfoga/master/api/docs/swagger.yaml">API documentation</a> •
-  <a href="https://demo.phoneinfoga.crvx.fr/">Demo instance</a> •
+  <a href="https://petstore.swagger.io/?url=https://raw.githubusercontent.com/sundowndev/phoneinfoga/master/web/docs/swagger.yaml">API documentation</a> •
   <a href="https://medium.com/@SundownDEV/phone-number-scanning-osint-recon-tool-6ad8f0cac27b">Related blog post</a>
 </p>
 
-![](./docs/images/screenshot.png)
-
 ## About
 
-PhoneInfoga is one of the most advanced tools to scan international phone numbers using only free resources. It allows you to first gather standard information such as country, area, carrier and line type on any international phone number. Then search for footprints on search engines to try to find the VoIP provider or identify the owner.
+PhoneInfoga is one of the most advanced tools to scan international phone numbers. It allows you to first gather basic information such as country, area, carrier and line type, then use various techniques to try to find the VoIP provider or identify the owner. It works with a collection of scanners that must be configured in order for the tool to be effective. PhoneInfoga doesn't automate everything, it's just there to help investigating on phone numbers.
 
 ## Current status
 
-This project is stable and production-ready. [Roadmap is here](https://github.com/sundowndev/phoneinfoga/projects/1).
+This project is stable and production-ready.
 
-**About demo instance**: This is a test service. Kittens will die if you abuse it. Numverify scan is pointless because my server's IP got blocked due to spam.
+#### Demo instance termination
 
-Since [v2 was released on March 2020](https://github.com/sundowndev/phoneinfoga/releases/tag/v2.0-beta), this project has been rewritten in Go language (previously Python). Why ? To improve code base, maintainability, have a stronger test suite and be able to compile code base. PhoneInfoga v2 brings new features such as serving a REST API and a web client. Usage of scanners was improved in order to drop usage of Selenium/Geckodriver which has cause many users to have troubleshoots using the tool. You can still use the legacy version in [tag v1.11](https://github.com/sundowndev/phoneinfoga/tree/v1.11) and the legacy Docker image (`sundowndev/phoneinfoga:legacy`). Some features were not included in version 2 such as input/output CLI options. The roadmap of the project changed so we can focus on the web client features. **Version 2 does not scan Google results anymore**, [read more](https://sundowndev.github.io/phoneinfoga/usage/#available-scanners).
+The demo instance has been terminated on December 21th, 2023. It's been expensive to maintain this instance throughout the years given the number of requests it received (~20K/month), without bringing much value to users compared to using it locally. Use it locally with your own API keys for a better experience.
 
 ## Features
 
-- Check if phone number exists and is possible
-- Gather standard informations such as country, line type and carrier
-- OSINT footprinting using external APIs, Google Hacking, phone books & search engines
+- Check if phone number exists
+- Gather basic information such as country, line type and carrier
+- OSINT footprinting using external APIs, phone books & search engines
 - Check for reputation reports, social media, disposable numbers and more
-- Scan several numbers at once
-- Use custom formatting for more effective OSINT reconnaissance (*v1 only*)
 - Use the graphical user interface to run scans from the browser
-- Run your own web instance as a service
-- Programmatic usage with the REST API
+- Programmatic usage with the [REST API](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/sundowndev/phoneinfoga/master/web/docs/swagger.yaml) and [Go modules](https://pkg.go.dev/github.com/sundowndev/phoneinfoga/v2)
 
 ## Anti-features
 
@@ -61,8 +58,6 @@ Since [v2 was released on March 2020](https://github.com/sundowndev/phoneinfoga/
 - Does not allow to "track" a phone or its owner in real time
 - Does not allow to get the precise phone location
 - Does not allow to hack a phone
-
-![Footprinting process](https://i.imgur.com/qCkgzz8.png)
 
 ## License
 
@@ -74,6 +69,10 @@ This tool is licensed under the GNU General Public License v3.0.
 
 ## Support
 
-[![](docs/jetbrains.svg)](https://www.jetbrains.com/?from=sundowndev)
+Support me by signing up to DigitalOcean using my link ($200 free credits)
 
-Thanks to [JetBrains](https://www.jetbrains.com/?from=sundowndev) for supporting my open-source projects.
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=31f5ef768eb3&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+
+<div align="center">
+  <img src="https://github.com/sundowndev/static/raw/main/sponsors.svg?v=c68eba9" width="100%" heigh="auto" />
+</div>

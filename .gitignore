@@ -4,6 +4,7 @@
 *.dll
 *.so
 *.dylib
+/bin
 
 # Test binary, built with `go test -c`
 *.test
@@ -18,14 +19,5 @@
 .DS_Store
 coverage
 coverage.*
+unit-tests.xml
 .idea
-api/assets.go
-
-# Yarn
-client/.pnp.*
-client/.yarn/*
-!client/.yarn/patches
-!client/.yarn/plugins
-!client/.yarn/releases
-!client/.yarn/sdks
-!client/.yarn/versions
